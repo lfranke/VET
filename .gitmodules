@@ -1,0 +1,10 @@
+[submodule "External/tensorboard_logger"]
+	path = External/tensorboard_logger
+	url = ../../RustingSword/tensorboard_logger
+[submodule "External/NeAT"]
+	path = External/NeAT
+	url = ../../lfranke/NeAT.git
+[submodule "External/saiga"]
+	path = External/saiga
+	url = ../../lfranke/saiga.git
+
