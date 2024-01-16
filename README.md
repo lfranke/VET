@@ -64,6 +64,7 @@ git submodule update --init --recursive --jobs 0
 
  ```shell
 ./install_pytorch_precompiled.sh
+cd ..
  ```
 
 * Compile VET
