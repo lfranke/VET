@@ -62,28 +62,28 @@ sudo apt install xorg-dev
 * Clone Repo
 ```
 git clone git@github.com:lfranke/VET.git
-cd vet/
+cd VET/
 git submodule update --init --recursive --jobs 0
 ```
 
 * Create Conda Environment
 
 ```shell
-cd vet
+cd VET
 ./create_environment.sh
 ```
 
 * Install Pytorch
 
  ```shell
-cd vet
+cd VET
 ./install_pytorch_precompiled.sh
 ```
 
 * Compile VET
 
 ```shell
-cd vet
+cd VET
 
 conda activate vet
 
