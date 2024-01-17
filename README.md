@@ -41,35 +41,50 @@ is possible at real-time frame rates.
 
 Supported Operating Systems: Ubuntu 22.04
 
-Supported Compiler:
+Supported Compiler: g++-9
 
-* g++-9
+Software Requirement: Conda (Anaconda/Miniconda)
+
 
 
 ## Install Instructions
 
+* Install Ubuntu Dependancies
+```
+sudo apt install git build-essential gcc-9 g++-9
+```
+For the viewer, also install:
+```
+sudo apt install xorg-dev
+```
+(There exists a headless mode without window management meant for training on a cluster, see below)
+
 * Clone Repo
 ```
 git clone git@github.com:lfranke/VET.git
+cd vet/
 git submodule update --init --recursive --jobs 0
 ```
 
 * Create Conda Environment
 
 ```shell
+cd vet
 ./create_environment.sh
 ```
 
 * Install Pytorch
 
  ```shell
+cd vet
 ./install_pytorch_precompiled.sh
-cd ..
- ```
+```
 
 * Compile VET
 
 ```shell
+cd vet
+
 conda activate vet
 
 export CONDA=${CONDA_PREFIX:-"$(dirname $(which conda))/../"}
@@ -79,9 +94,10 @@ export CUDAHOSTCXX=g++-9
 
 mkdir build
 cd build
+
 cmake -DCMAKE_PREFIX_PATH="${CONDA}/lib/python3.9/site-packages/torch/;${CONDA}" ..
+
 make -j10
-cd ..
 
 ```
 
@@ -124,7 +140,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA/lib
 ./build/bin/viewer --scene_dir scenes/tt_train
 
 ```
-
+Your working directory should be the vet root directory.
 
 
 ## Scene Description
@@ -147,6 +163,10 @@ The basic syntax is:
 
 Make again sure that the working directory is the root.
 Otherwise, the loss models will not be found.
+
+## Headless Mode
+
+If you do not want the viewer application, consider calling cmake with an additional `-DHEADLESS`.
 
 
 ## Troubleshooting
