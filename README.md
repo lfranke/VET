@@ -105,7 +105,7 @@ make -j10
 
 ## Running on pretrained models
 
-Supplemental materials link: [https://zenodo.org/records/10473511](https://zenodo.org/records/10473511)
+Supplemental materials link: [https://zenodo.org/records/10477744](https://zenodo.org/records/10477744)
 
 After a successful compilation, the best way to get started is to run `viewer` on the *tanks and temples* scenes
 using our pretrained models.
